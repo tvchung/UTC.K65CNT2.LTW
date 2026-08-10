@@ -1,0 +1,14 @@
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\bin\Debug\net8.0\TvcLesson01.exe
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\bin\Debug\net8.0\TvcLesson01.deps.json
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\bin\Debug\net8.0\TvcLesson01.runtimeconfig.json
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\bin\Debug\net8.0\TvcLesson01.dll
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\bin\Debug\net8.0\TvcLesson01.pdb
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.GeneratedMSBuildEditorConfig.editorconfig
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.AssemblyInfoInputs.cache
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.AssemblyInfo.cs
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.csproj.CoreCompileInputs.cache
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.dll
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\refint\TvcLesson01.dll
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.pdb
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.genruntimeconfig.cache
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\ref\TvcLesson01.dll

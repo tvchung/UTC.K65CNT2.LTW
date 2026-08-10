@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\devmaster.edu.vn\\UTC.K65CNT.LTW1\\UTC.K65CNT2.LTW\\TvcLesson01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{90D17107-5EEC-491D-94BA-F90EBFB381F8}|TvcLesson01\\TvcLesson01.csproj|d:\\devmaster.edu.vn\\utc.k65cnt.ltw1\\utc.k65cnt2.ltw\\tvclesson01\\tvclesson01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90D17107-5EEC-491D-94BA-F90EBFB381F8}|TvcLesson01\\TvcLesson01.csproj|solutionrelative:tvclesson01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\devmaster.edu.vn\\UTC.K65CNT.LTW1\\UTC.K65CNT2.LTW\\TvcLesson01\\TvcLesson01\\Program.cs",
+              "RelativeDocumentMoniker": "TvcLesson01\\Program.cs",
+              "ToolTip": "D:\\devmaster.edu.vn\\UTC.K65CNT.LTW1\\UTC.K65CNT2.LTW\\TvcLesson01\\TvcLesson01\\Program.cs",
+              "RelativeToolTip": "TvcLesson01\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T03:39:45.061Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
