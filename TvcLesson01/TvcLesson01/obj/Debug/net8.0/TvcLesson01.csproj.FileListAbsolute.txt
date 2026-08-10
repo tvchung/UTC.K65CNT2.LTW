@@ -12,3 +12,4 @@ D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\
 D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.pdb
 D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.genruntimeconfig.cache
 D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\ref\TvcLesson01.dll
+D:\devmaster.edu.vn\UTC.K65CNT.LTW1\UTC.K65CNT2.LTW\TvcLesson01\TvcLesson01\obj\Debug\net8.0\TvcLesson01.sourcelink.json
