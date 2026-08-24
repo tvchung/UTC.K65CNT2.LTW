@@ -4,8 +4,7 @@
 
     var products = ViewData["products"] as List<TvcLesson03.Models.TvcProduct>;
 
-    var stt = 0;
-    var tt = 0; 
+    int stt = 0;
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -26,14 +25,13 @@
         @foreach (TvcProduct item in products)
         {
             stt++;
-            //tt = item.quantity * item.price;
             <tr>
                 <td>@stt</td>
                 <td>@item.productId</td>
                 <td>@item.productName</td>
                 <td>@item.quantity</td>
                 <td>@item.price</td>
-                <td>@item.quantity*@item.price</td>
+                <td>@(item.quantity*item.price)</td>
                 <td>
                     <a href="" class="btn btn-primary">Xem</a>
                     <a href="" class="btn btn-info">Sửa</a>
@@ -43,4 +41,3 @@
         }
     </tbody>
 </table>
-
