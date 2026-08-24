@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Thông tin sản phẩm";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr/>
+<div class="alert alert-danger">
+    <h2>Lấy từ ViewBag</h2>
+    <p>ID: @ViewBag.productVB.productId</p>
+    <p>Name: @ViewBag.productVB.productName</p>
+    <p>Quantity: @ViewBag.productVB.quantity</p>
+    <p>Price: @ViewBag.productVB.price</p>
+</div>
+<hr/>
+@{
+    var product = ViewData["productVD"] as TvcLesson03.Models.TvcProduct;
+}
+<div class="alert alert-info">
+    <h2>Lấy từ ViewData</h2>
+    <p>ID: @product.productId</p>
+    <p>Name: @product.productName</p>
+    <p>Quantity: @product.quantity</p>
+    <p>Price: @product.price</p>
+</div>
+
