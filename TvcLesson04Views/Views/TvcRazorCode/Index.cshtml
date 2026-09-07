@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Razor C#";
+}
+
+<h1>Ngôn ngữ lập trình Razor Code</h1>
+<hr/>
+@{
+    var name = "Trịnh Văn Chung";
+    int age = 47;
+    string email = "chungtrinhj@gmail.com";
+}
+<div class="alert alert-danger">
+    <h2>Welcome to @name</h2>
+    <p>Age: @age</p>
+    <p>Email: @email</p>
+</div>
+<div class="alert alert-success">
+    <h2>Welcome to @name</h2>
+    @{
+        var currentDate = DateTime.Now.DayOfWeek;
+        var greetingMessage = currentDate == DayOfWeek.Monday ? "Chúc bạn một tuần mới vui vẻ!" : "Chúc bạn một ngày tốt lành!";
+    }
+
+    <h3>@greetingMessage</h3>
+</div>
+
+<div class="alert alert-light">
+    <h2>Cấu trúc  If</h2>
+    @if (age >= 18)
+    {
+        <p>Bạn đủ tuổi để tham gia.</p>
+    }
+    else
+    {
+        <p>Bạn chưa đủ tuổi để tham gia.</p>
+    }   
+</div>
+<div class="alert alert-info">
+    <h2>Cấu trúc for</h2>
+    <ul>
+        @for (int i = 1; i <= 10; i++)
+        {
+            if(i % 2 == 0)
+            {
+                <button class="btn btn-danger">@i</button>
+            }
+            else
+            {
+                <button class="btn btn-success">@i</button>
+            }
+        }
+</div>
+
+@{
+    string[] imgs = { "icon1.png", "icon2.png", "icon3.png", "icon4.png" };
+}
+<div>
+    @foreach (var item in imgs)
+    {
+        <img src="/icons/@item" alt="@item" width="200px" />
+    }
+</div>
