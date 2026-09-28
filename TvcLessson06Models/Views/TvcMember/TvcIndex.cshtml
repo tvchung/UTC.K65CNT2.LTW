@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TvcLessson06Models.Models.TvcMember>
+
+@{
+    ViewData["Title"] = "TvcIndex";
+}
+
+<h1>TvcIndex</h1>
+
+<p>
+    <a asp-action="TvcCreate">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TvcMemberId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvcMemberUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvcMemberPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvcMemberEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvcMemberFullName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TvcMemberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TvcMemberUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TvcMemberPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TvcMemberEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TvcMemberFullName)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "TvcEdit", new { id=item.TvcMemberId }) |
+                @Html.ActionLink("Chi tiết", "TvcDetails", new {  id=item.TvcMemberId }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

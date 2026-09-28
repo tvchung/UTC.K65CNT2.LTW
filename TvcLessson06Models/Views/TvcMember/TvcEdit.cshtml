@@ -1,0 +1,53 @@
+﻿@model TvcLessson06Models.Models.TvcMember
+
+@{
+    ViewData["Title"] = "TvcEdit";
+}
+
+<h1>TvcEdit</h1>
+
+<h4>TvcMember</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="TvcEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TvcMemberId" class="control-label"></label>
+                <input asp-for="TvcMemberId" class="form-control" />
+                <span asp-validation-for="TvcMemberId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TvcMemberUserName" class="control-label"></label>
+                <input asp-for="TvcMemberUserName" class="form-control" />
+                <span asp-validation-for="TvcMemberUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TvcMemberPassword" class="control-label"></label>
+                <input asp-for="TvcMemberPassword" class="form-control" />
+                <span asp-validation-for="TvcMemberPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TvcMemberEmail" class="control-label"></label>
+                <input asp-for="TvcMemberEmail" class="form-control" />
+                <span asp-validation-for="TvcMemberEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TvcMemberFullName" class="control-label"></label>
+                <input asp-for="TvcMemberFullName" class="form-control" />
+                <span asp-validation-for="TvcMemberFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="TvcIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
