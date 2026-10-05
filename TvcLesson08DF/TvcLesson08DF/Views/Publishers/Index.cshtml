@@ -1,0 +1,124 @@
+@model IEnumerable<TvcLesson08DF.Models.Publisher>
+
+@{
+    ViewData["Title"] = "Danh sách Nhà xuất bản";
+}
+
+<div class="container-fluid mt-3">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>@TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+            <h4 class="mb-0 fw-bold">
+                <i class="bi bi-building me-2"></i>Quản lý Nhà xuất bản
+            </h4>
+            <a asp-action="Create" class="btn btn-light fw-semibold text-primary">
+                + Thêm mới NXB
+            </a>
+        </div>
+        <div class="card-body">
+            <!-- Form tìm kiếm -->
+            <form asp-action="Index" method="get" class="row g-2 mb-3">
+                <div class="col-md-5 col-sm-8">
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" 
+                               placeholder="Tìm theo tên NXB, điện thoại, địa chỉ..." />
+                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(ViewBag.SearchString as string))
+                {
+                    <div class="col-md-2 col-sm-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary">Xóa bộ lọc</a>
+                    </div>
+                }
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle border">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width: 100px;">@Html.DisplayNameFor(model => model.PublisherId)</th>
+                            <th>@Html.DisplayNameFor(model => model.PublisherName)</th>
+                            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+                            <th>@Html.DisplayNameFor(model => model.Address)</th>
+                            <th class="text-center" style="width: 140px;">Số lượng sách</th>
+                            <th class="text-center" style="width: 220px;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">#@item.PublisherId</td>
+                                    <td class="fw-bold text-dark">
+                                        <a asp-action="Details" asp-route-id="@item.PublisherId" class="text-decoration-none text-primary">
+                                            @item.PublisherName
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.Phone))
+                                        {
+                                            <span class="badge bg-light text-dark border">
+                                                @item.Phone
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted fst-italic">Chưa có</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @(string.IsNullOrEmpty(item.Address) ? "Chưa có địa chỉ" : item.Address)
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info text-dark rounded-pill px-3 py-2">
+                                            @(item.Books?.Count ?? 0) sách
+                                        </span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <a asp-action="Edit" asp-route-id="@item.PublisherId" class="btn btn-outline-warning" title="Chỉnh sửa">
+                                                Sửa
+                                            </a>
+                                            <a asp-action="Details" asp-route-id="@item.PublisherId" class="btn btn-outline-info" title="Xem chi tiết">
+                                                Chi tiết
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.PublisherId" class="btn btn-outline-danger" title="Xóa">
+                                                Xóa
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center py-4 text-muted">
+                                    <em>Không tìm thấy dữ liệu nhà xuất bản nào.</em>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

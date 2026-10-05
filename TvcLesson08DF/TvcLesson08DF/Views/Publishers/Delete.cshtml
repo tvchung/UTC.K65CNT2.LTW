@@ -1,0 +1,86 @@
+@model TvcLesson08DF.Models.Publisher
+
+@{
+    ViewData["Title"] = "Xác nhận xóa Nhà xuất bản";
+    bool hasBooks = Model.Books != null && Model.Books.Any();
+}
+
+<div class="container mt-4">
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0 border-top border-4 border-danger">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 fw-bold text-danger">
+                        Xác nhận xóa Nhà xuất bản
+                    </h5>
+                </div>
+                <div class="card-body p-4">
+                    @if (hasBooks)
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Cảnh báo ràng buộc toàn vẹn:</strong> Nhà xuất bản này hiện đang có <strong>@(Model.Books?.Count ?? 0)</strong> cuốn sách liên kết trong hệ thống. Bạn không thể xóa khi vẫn còn sách thuộc nhà xuất bản này!
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Bạn có chắc chắn muốn xóa vĩnh viễn nhà xuất bản này khỏi cơ sở dữ liệu không? Thao tác này không thể hoàn tác!
+                        </div>
+                    }
+
+                    <div class="list-group list-group-flush mb-4 border rounded">
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">Mã nhà xuất bản:</span>
+                            <span class="fw-bold">#@Model.PublisherId</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">Tên nhà xuất bản:</span>
+                            <span class="fw-bold text-dark">@Model.PublisherName</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">Số điện thoại:</span>
+                            <span>@(string.IsNullOrEmpty(Model.Phone) ? "Chưa cập nhật" : Model.Phone)</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">Địa chỉ:</span>
+                            <span>@(string.IsNullOrEmpty(Model.Address) ? "Chưa cập nhật" : Model.Address)</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">Số lượng sách:</span>
+                            <span class="badge @(hasBooks ? "bg-danger" : "bg-secondary")">@(Model.Books?.Count ?? 0) sách</span>
+                        </div>
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="PublisherId" />
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                &larr; Hủy bỏ, quay lại
+                            </a>
+                            @if (!hasBooks)
+                            {
+                                <button type="submit" class="btn btn-danger px-4 fw-semibold">
+                                    Đồng ý xóa
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-danger px-4 fw-semibold disabled" disabled title="Không thể xóa vì còn sách">
+                                    Không thể xóa
+                                </button>
+                            }
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

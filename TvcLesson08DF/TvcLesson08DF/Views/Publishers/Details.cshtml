@@ -1,0 +1,94 @@
+@model TvcLesson08DF.Models.Publisher
+
+@{
+    ViewData["Title"] = "Chi tiết Nhà xuất bản";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-info text-white py-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 fw-bold">
+                Chi tiết Nhà xuất bản: @Model.PublisherName
+            </h5>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.PublisherId" class="btn btn-warning btn-sm fw-semibold">
+                    Chỉnh sửa
+                </a>
+                <a asp-action="Index" class="btn btn-light btn-sm fw-semibold">
+                    Quay lại
+                </a>
+            </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded-3">
+                        <small class="text-muted d-block">Mã nhà xuất bản</small>
+                        <span class="fs-5 fw-bold text-primary">#@Model.PublisherId</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded-3">
+                        <small class="text-muted d-block">Tên nhà xuất bản</small>
+                        <span class="fs-5 fw-bold text-dark">@Model.PublisherName</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded-3">
+                        <small class="text-muted d-block">Số điện thoại</small>
+                        <span class="fs-6 fw-semibold">@(string.IsNullOrEmpty(Model.Phone) ? "Chưa cập nhật" : Model.Phone)</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded-3">
+                        <small class="text-muted d-block">Địa chỉ trụ sở</small>
+                        <span class="fs-6 fw-semibold">@(string.IsNullOrEmpty(Model.Address) ? "Chưa cập nhật" : Model.Address)</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <h5 class="fw-bold mb-3 text-secondary">
+                Danh sách các cuốn sách thuộc Nhà xuất bản (@(Model.Books?.Count ?? 0) cuốn)
+            </h5>
+
+            @if (Model.Books != null && Model.Books.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mã sách</th>
+                                <th>Tựa sách</th>
+                                <th>Tác giả</th>
+                                <th>Thể loại</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var book in Model.Books)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">@book.BookId</td>
+                                    <td class="fw-bold text-primary">@book.Title</td>
+                                    <td>@(string.IsNullOrEmpty(book.Author) ? "Chưa có" : book.Author)</td>
+                                    <td>
+                                        <span class="badge bg-secondary">
+                                            @(book.Category?.CategoryName ?? "Chưa phân loại")
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-light border text-muted">
+                    Hiện chưa có cuốn sách nào được xuất bản bởi nhà xuất bản này.
+                </div>
+            }
+        </div>
+    </div>
+</div>
